@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://blackpencil2019.github.io/myblog/
+url: https://blackpencil2019.github.io/myblog2
 date_format: "ordinal"
 title: BLACKPENCIL's CASE
 subtitle: "小铅笔盒子"
