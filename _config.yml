@@ -70,7 +70,7 @@ repository: blackpencil2019/myblog
 # ---------------- #
 #  Special effect  #
 # ---------------- #
-se:
+effect:
     fireworks: true
     canvas_nest: true
     
