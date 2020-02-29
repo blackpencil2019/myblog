@@ -18,7 +18,7 @@
 #   Main Configs   #
 # ---------------- #
 remote_theme: blackpencil2019/New-Yummy-Jekyll-Theme
-baseurl: /
+baseurl: /a
 url: https://blackpencil2019.github.io/myblog
 date_format: "ordinal"
 title: PENCIL's CASE
