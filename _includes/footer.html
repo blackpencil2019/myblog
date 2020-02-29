@@ -96,12 +96,11 @@
     
     {% if site.effect.live2d %}
     <div class="pio-container" style="right:-75px">
-        <div class="pio-action"></div>
         <canvas id="pio" width="325" height="300"></canvas>
     </div>
     <!-- 引用 Live2D 核心组件 -->
     <script src='{{ site.url }}/assets/js/src/live2d/static/l2d.js'></script>
-    <!-- 引用看板娘交互组件 -->
+    <!-- 引用看板娘交互组件 https://docs.paul.ren/pio/#/?id=referer -->
     <script src="{{ site.url }}/assets/js/src/live2d/static/pio.js" onload='
     var pio = new Paul_Pio({
     "mode": "fixed",
