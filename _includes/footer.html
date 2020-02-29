@@ -1,0 +1,134 @@
+    <footer class="container">
+        <div class="site-footer" role="contentinfo">
+            <div class="copyright left mobile-block">
+                    © 2020
+                    <span title="{{ site.author}}">{{ site.author }}</span>
+                    <span class="mobile-hidden">| Powered by <a href="https://jekyllrb.com/" title="Jekyll">Jekyll</a>, hosted on <a href="https://pages.github.com/" title="GitHub Pages">GitHub Pages</a></span>
+                    <a href="{{ site.url }}{{ site.subscribe_rss }}"><span class="octicon octicon-rss" style="color:orange;"></span></a>
+                    <br><li class="mobile-visible">Powered by <a href="https://jekyllrb.com/" title="Jekyll">Jekyll</a>, hosted on <a href="https://pages.github.com/" title="GitHub Pages">GitHub Pages</a></li>
+                    <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
+            </div>
+
+            <ul class="site-footer-links right mobile-hidden">
+                <li>
+                    <a href="javascript:window.scrollTo(0,0)" >TOP</a>
+                </li>
+            </ul>
+            <a href="https://github.com" target="_blank" aria-label="GitHub">
+                <span class="mega-octicon octicon-mark-github mobile-hidden" title="GitHub"></span>
+            </a>
+            <ul class="site-footer-links right mobile-hidden" style="position:relative;right:2%">
+                {% for nav in site.navs %}
+                <li>
+                    <a href="{{ site.url }}{{ nav.href }}" title="{{ nav.label }}" target="{{ nav.target | default: _self }}">{{ nav.label }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </footer>
+    <div class="tools-wrapper">
+      <a class="gotop" href="#" title="回到顶部"><span class="octicon octicon-arrow-up"></span></a>
+    </div>
+    <!-- / footer -->
+    <script src="{{ site.url }}/assets/vendor/share.js/dist/js/share.min.js"></script>
+    <script src="{{ site.url }}/assets/js/geopattern.js"></script>
+    <script src="{{ site.url }}/assets/js/prism.js"></script>
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/globals/prism.css">
+    <script>
+      jQuery(document).ready(function($) {
+        // geopattern
+        $('.geopattern').each(function(){
+          $(this).geopattern($(this).data('pattern-id'));
+        });
+       // hljs.initHighlightingOnLoad();
+      });
+    </script>
+
+    {% if page.mermaid %}
+    <script src="{{ site.url }}/assets/js/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    {% endif %}
+
+    {% if page.sequence %}
+    <script src="{{ site.url }}/assets/js/webfont.js"></script>
+    <script src="{{ site.url }}/assets/js/snap.svg-min.js"></script>
+    <script src="{{ site.url }}/assets/js/underscore-min.js"></script>
+    <script src="{{ site.url }}/assets/vendor/js-sequence-diagrams/dist/sequence-diagram-min.js"></script>
+    <link rel="stylesheet" href="{{ site.url }}/assets/vendor/js-sequence-diagrams/dist/sequence-diagram-min.css">
+    <script>
+      $(".language-sequence").sequenceDiagram({theme: 'simple'});
+    </script>
+    {% endif %}
+
+    {% if page.flow %}
+    <script src="{{ site.url }}/assets/js/raphael.min.js"></script>
+    <script src="{{ site.url }}/assets/vendor/flowchart.js/dist/flowchart.min.js"></script>
+    <script src="{{ site.url }}/assets/js/flow.js"></script>
+    {% endif %}
+
+    {% if page.mathjax %}
+    <script type="text/javascript" src="https://basis-learning.github.io/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    {% endif %}
+
+    {% if site.google.analytics_id %}
+    <div style="display:none">
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{{ site.google.analytics_id }}', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </div>
+    {% endif %}
+    {% if site.effect.canvas_nest %}
+    <script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-2" count="99" src="{{ site.url }}/assets/js/src/canvas-nest/canvas-nest.js"></script>
+    {% endif %}
+    {% if site.effect.fireworks %}
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="{{ site.url }}/assets/js/src/fireworks.js"></script>
+    {% endif %}
+    
+    {% if site.effect.live2d %}
+    <div class="pio-container mobile-hidden" style="right:-75px">
+        <div class="pio-action"></div>
+        <canvas id="pio" width="325" height="300"></canvas>
+        <div class="pio-dialog" style="right:6em"></div>
+    </div>
+    <div class="pio-container mobile-visible" style="right:-30px">
+        <div class="pio-action"></div>
+        <canvas id="pio" width="325" height="300"></canvas>
+        <div class="pio-dialog" style="right:9em"></div>
+    </div>
+    <!-- 引用 Live2D 核心组件 -->
+    <script src='{{ site.url }}/assets/js/src/live2d/static/l2d.js'></script>
+    <!-- 引用看板娘交互组件 -->
+    <script src="{{ site.url }}/assets/js/src/live2d/static/pio.js" onload='
+    var pio = new Paul_Pio({
+    "mode": "fixed",
+    "hidden": false,
+    "content": {
+        "welcome": ["欢迎来到小铅笔的铅笔盒子！", "今天天气不错，一起来玩吧！", "我是小铅笔，傲完就娇的小铅笔~~"],
+        "link": {{ site.url }}
+        "referer": "你通过 %t 找到了我~"
+        "touch": ["你在干什么？", "再摸我就报警了！", "HENTAI!", "你够了喔！"]
+        "custom": [
+            {"selector": ".comment-form", "text": "欢迎参与本文评论，别发小广告噢~"},
+            {"selector": ".site-header-nav a:last-child", "text": "在这里可以了解更多哦~"},
+            {"selector": ".repo-list-name a", "type": "read"},
+            {"selector": ".container a, .site-header-nav a:first-child", "type": "link"}
+        ]
+    },
+    "night": "single.night()",
+    "model": ["{{ site.url }}/assets/live2d/platelet-2/model.json"]
+    "tips": true
+    });'
+    ></script>
+    {% endif %}
+</body>
+</html>
