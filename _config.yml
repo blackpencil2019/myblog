@@ -27,7 +27,7 @@ description: "BLACKPENCIL is not black."
 keywords: blackpencil, blog
 timezone: Asia/Shanghai
 encoding: "utf-8"
-side_bar_repo_limit: 2
+side_bar_repo_limit: 1
 # ---------------- #
 #      Author      #
 # ---------------- #
