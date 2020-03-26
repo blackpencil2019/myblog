@@ -1,14 +1,14 @@
 ---
 layout: post
-title: Android双系统思路
+title: Android 双系统思路
 categories: [Android]
 description: 通过分区法实现Android手机双系统
 keywords: 双系统, 分区
 ---
 
-### 话不多说
-
 给 Android 手机实现双系统能带来很多便利，特别是在手机储存容量越来越大的今天！
+
+### 话不多说
 
 #### 基本原理
 
